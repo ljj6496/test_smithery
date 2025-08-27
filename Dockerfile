@@ -1,6 +1,6 @@
 # Dockerfile
-# Use a Python image with uv pre-installed
-FROM ghcr.io/astral-sh/uv:python3.12-alpine
+# Use a Python image with uv pre-installed (Debian-based for better compatibility)
+FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim
 
 # Install the project into `/app`
 WORKDIR /app
