@@ -1,21 +1,22 @@
-# Smithery configuration for 종목코드 검색 MCP Server
-# https://smithery.ai
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
 
 startCommand:
   type: stdio
   configSchema:
+    # JSON Schema defining the configuration options for the MCP.
     type: object
+    required: []
     properties:
       dataDir:
         type: string
-        description: "마스터파일 및 데이터 저장 디렉토리"
-        default: "."
-    required: []
-  commandFunction: |
+        description: Directory for master files and data storage
+  commandFunction:
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
+    |-
     (config) => ({
-      command: "uv",
-      args: ["run", "mcp", "run", "server.py"],
-      env: {
-        HANTOO_DATA_DIR: config.dataDir || "."
-      }
+      command: 'uv',
+      args: ['run', 'mcp', 'run', 'server.py'],
+      env: { HANTOO_DATA_DIR: config.dataDir || '.' }
     })
+  exampleConfig:
+    dataDir: "."
