@@ -3,5 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "종목코드 검색 MCP Server",
-  "scripts": {}
+  "scripts": {
+    "build": "echo 'Python project - no build needed'"
+  }
 }
