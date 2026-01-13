@@ -1,5 +1,9 @@
 # Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
 
+build:
+  type: docker
+  dockerfile: Dockerfile
+
 startCommand:
   type: http
   configSchema:
