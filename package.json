@@ -4,6 +4,6 @@
   "private": true,
   "description": "종목코드 검색 MCP Server",
   "scripts": {
-    "build": "echo 'Python project - no build needed'"
+    "build": "npx @anthropic-ai/smithery build"
   }
 }
