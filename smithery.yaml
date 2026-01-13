@@ -1,25 +1,4 @@
-# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
-
+# Smithery configuration file
 runtime: "container"
-
-build:
-  dockerfile: "Dockerfile"
-  dockerBuildPath: "."
-
-startCommand:
-  type: "http"
-  configSchema:
-    type: object
-    required: []
-    properties:
-      dataDir:
-        type: string
-        description: Directory for master files and data storage
-  commandFunction:
-    |-
-    (config) => ({
-      command: 'uv',
-      args: ['run', 'python', 'server.py'],
-      env: { HANTOO_DATA_DIR: config.dataDir || '.' }
-    })
-  port: 8000
+type: http
+port: 8000
