@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "node -e \"const fs=require('fs'); fs.mkdirSync('.smithery',{recursive:true}); fs.writeFileSync('.smithery/manifest.json', JSON.stringify({name:'kis-symbol-search',version:'1.0.0',runtime:'container',transport:{type:'http',port:8000}}));\""
+    "build": "node build-manifest.js"
   }
 }
