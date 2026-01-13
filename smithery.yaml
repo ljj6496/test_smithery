@@ -1,0 +1,21 @@
+# Smithery configuration for 종목코드 검색 MCP Server
+# https://smithery.ai
+
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties:
+      dataDir:
+        type: string
+        description: "마스터파일 및 데이터 저장 디렉토리"
+        default: "."
+    required: []
+  commandFunction: |
+    (config) => ({
+      command: "uv",
+      args: ["run", "mcp", "run", "server.py"],
+      env: {
+        HANTOO_DATA_DIR: config.dataDir || "."
+      }
+    })
