@@ -16,5 +16,5 @@ RUN uv sync --frozen
 # Expose port
 EXPOSE 8000
 
-# Run MCP server
-CMD ["uv", "run", "mcp", "run", "server.py"]
+# Run HTTP MCP server
+CMD ["uv", "run", "python", "server.py"]
