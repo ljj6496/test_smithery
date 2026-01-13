@@ -1,20 +1,12 @@
-FROM python:3.12-slim
+FROM python:3.11-slim
 
 WORKDIR /app
 
-# Install uv
-RUN pip install uv
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy project files
-COPY pyproject.toml uv.lock ./
-COPY server.py ./
-COPY src/ ./src/
+COPY . .
 
-# Install dependencies
-RUN uv sync --frozen
-
-# Expose port
 EXPOSE 8000
 
-# Run HTTP MCP server
-CMD ["uv", "run", "python", "server.py"]
+CMD ["python", "server.py"]

@@ -1,4 +1,8 @@
-# Smithery configuration file
-runtime: "container"
-type: http
-port: 8000
+runtime: container
+
+build:
+  dockerfile: Dockerfile
+  dockerBuildPath: .
+
+startCommand:
+  type: http
